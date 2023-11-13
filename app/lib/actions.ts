@@ -12,7 +12,7 @@ const InvoiceSchema = z.object({
 		invalid_type_error: 'Please select a customer.',
 	}),
 	amount: z.coerce.number().gt(0, { message: 'Amount must be greater than 0.' }),
-	status: z.enum(['paid', 'pending'], { message: 'Please select a status.' }),
+	status: z.enum(['paid', 'pending'], { invalid_type_error: 'Please select a status.' }),
 	date: z.string(),
 })
 
